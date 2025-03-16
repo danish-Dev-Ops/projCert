@@ -18,7 +18,7 @@ pipeline {
                 ansiblePlaybook(
                     playbook: 'ansible-playbooks/puppet_install.yml',
                     inventory: 'ansible-playbooks/inventory.txt',
-                    credentialsId: 'ssh-credentials'
+                    credentialsId: 'ssh-credentials',
                     extras: '-vvv'
                 )
             }
