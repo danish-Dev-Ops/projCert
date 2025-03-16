@@ -1,6 +1,17 @@
 pipeline {
     agent any
     stages {
+
+        // Stage 0: Add Test Server's Host Key
+        stage('Add Host Key') {
+            steps {
+                sh '''
+                    mkdir -p ~/.ssh
+                    ssh-keyscan 172.31.17.227 >> ~/.ssh/known_hosts
+                '''
+            }
+        }
+        
         // Stage 1: Install Puppet Agent on Test Server
         stage('Install Puppet Agent') {
             steps {
