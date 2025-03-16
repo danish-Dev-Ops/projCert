@@ -12,9 +12,9 @@
         - software-properties-common
 
     - name: Add Docker GPG key
-      apt_key:
-        url: https://download.docker.com/linux/ubuntu/gpg
-        state: present
+      shell: gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg /tmp/docker-gpg-key
+      args:
+        creates: /usr/share/keyrings/docker-archive-keyring.gpg
 
     - name: Add Docker repository
       apt_repository:
