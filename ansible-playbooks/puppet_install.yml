@@ -1,0 +1,7 @@
+- hosts: test_server
+  become: yes
+  tasks:
+    - name: Install Puppet Agent
+      apt:
+        name: puppet-agent
+        state: present
