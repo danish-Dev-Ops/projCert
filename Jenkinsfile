@@ -27,7 +27,6 @@ pipeline {
         stage('Build and Deploy PHP App') {
             steps {
                 sh '''
-                    git clone https://github.com/your-repo/projCert.git
                     cd projCert
                     docker build -t php-app .
                     docker run -d -p 80:80 --name php-app-container php-app
