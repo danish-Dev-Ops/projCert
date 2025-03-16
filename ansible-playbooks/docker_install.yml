@@ -1,4 +1,4 @@
-- hosts: test_server
+- hosts: Test_Servers
   become: yes
   tasks:
     - name: Install Docker dependencies
