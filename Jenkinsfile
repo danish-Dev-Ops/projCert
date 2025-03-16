@@ -41,14 +41,5 @@ pipeline {
         }
 
         // Stage 4: Deploy to Production Server (Optional)
-        stage('Deploy to Prod') {
-            steps {
-                ansiblePlaybook(
-                    playbook: 'ansible-playbooks/deploy_prod.yml',
-                    inventory: 'ansible-playbooks/prod_inventory.txt',
-                    credentialsId: 'ssh-credentials'
-                )
-            }
-        }
     }
 }
